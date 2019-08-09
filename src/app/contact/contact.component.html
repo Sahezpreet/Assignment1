@@ -1,0 +1,28 @@
+<div style="text-align: center">
+    <h1 style="color: blue">Add Contact</h1>
+    
+    <form [formGroup]="studentContact">
+        <mat-form-field>
+            <input matInput placeholder="EmailId" formControlName="emailId">
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+            <input matInput placeholder="Contact Number" formControlName="contactNumber">
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+            <input matInput placeholder="Github Link" formControlName="githubLink">
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+            <input matInput placeholder="Linkedin Link" formControlName="linkedLink">
+        </mat-form-field><br>
+
+        <button mat-raised-button color="primary" routerLink="/academic" (click)='contactAdd()'> Add </button>
+
+
+    </form>
+    <router-outlet></router-outlet>

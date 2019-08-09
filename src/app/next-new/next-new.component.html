@@ -1,0 +1,42 @@
+<div style="text-align: center">
+    <h1 style="color: blue">Add Students</h1>
+
+      <form [formGroup]="profileForm">
+        <mat-form-field>
+          <input matInput placeholder="First Name" formControlName="firstName">
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        <mat-form-field>
+          <input matInput placeholder="Middle Name" formControlName="middleName">
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+          <input matInput placeholder="Last Name" formControlName="lastName">
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <input matInput placeholder="Location" formControlName="location">
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dateOfBirth">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        <mat-form-field>
+            <mat-select placeholder="Gender" formControlName="gender">
+              <mat-option value="option">Male</mat-option>
+              <mat-option value="option">Female</mat-option>
+              <mat-option value="option">Others</mat-option>
+            </mat-select>
+        </mat-form-field><br>
+
+        <button mat-raised-button color="primary" routerLink= "/contact" (click)='studentAdd()'> Submit </button> 
+      </form>
+</div>
+<router-outlet></router-outlet>

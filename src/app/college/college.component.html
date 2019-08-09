@@ -1,0 +1,42 @@
+<div style="text-align: center">
+    <h1 style="color: blue">Academic Details</h1>
+    <form [formGroup]="academic">
+        <mat-form-field>
+            <mat-select placeholder="college Name" formControlName="college">
+                <mat-option value="option">Guru Nanak Dev University</mat-option>
+                <mat-option value="option">Punjab University</mat-option>
+                <mat-option value="option">Lovely Professional University</mat-option>
+                <mat-option value="option">Khalsa College</mat-option>
+                <mat-option value="option">Thapar University</mat-option>
+                <mat-option value="option">Other</mat-option>
+            </mat-select>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-select placeholder="Degree" formControlName="degree">
+                <mat-option value="option">BCA</mat-option>
+                <mat-option value="option">MCA</mat-option>
+                <mat-option value="option">B.tech</mat-option>
+                <mat-option value="option">M.tech</mat-option>
+                <mat-option value="option">Other</mat-option>
+            </mat-select>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <input matInput placeholder="From Year" formControlName="yearFrom">
+        </mat-form-field>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <mat-form-field>
+            <input matInput placeholder="To Year" formControlName="yearTo">
+        </mat-form-field>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+         <button mat-raised-button color="primary" (click)='addAcademic()'> Add </button>
+
+
+
+
+
+    </form>
+    <router-outlet></router-outlet>

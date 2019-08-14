@@ -13,6 +13,7 @@ export class RestApiService {
   saveUserDetails(data,url) :Observable<any>{
     const headers= new HttpHeaders().set('Content-Type', 'application/json');
     const URL='http://127.0.0.1:5050'+url;
+    console.log(data)
     console.log(URL)
     return this.http.post<any>(URL,data,{headers}).pipe(catchError(this.handleError));
   }

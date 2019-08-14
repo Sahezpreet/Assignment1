@@ -1,14 +1,17 @@
 <div style="text-align: center">
     <h1 style="color: blue">Add Students</h1>
 
-      <form [formGroup]="profileForm">
+      <form [formGroup]="profileForm" novalidate>
         <mat-form-field>
           <input matInput placeholder="First Name" formControlName="firstName">
+          <!-- <mat-error *ngIf="lastname.touched && lastname.invalid">
+            <mat-error *ngIf="lastname.errors">Lastname is <strong>required</strong></mat-error>
+          </mat-error> -->
         </mat-form-field>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
         <mat-form-field>
-          <input matInput placeholder="Middle Name" formControlName="middleName">
+          <input matInput placeholder="Middle Name" formControlName="middleName" required>
         </mat-form-field>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -36,7 +39,7 @@
             </mat-select>
         </mat-form-field><br>
 
-        <button mat-raised-button color="primary" routerLink= "/contact" (click)='studentAdd()'> Submit </button> 
+        <button mat-raised-button color="primary"  (click)='studentAdd()'> Submit </button> 
       </form>
 </div>
 <router-outlet></router-outlet>

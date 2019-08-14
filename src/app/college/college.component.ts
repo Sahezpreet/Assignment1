@@ -19,6 +19,9 @@ export class CollegeComponent implements OnInit {
   constructor(private apiservice: RestApiService) { }
 
   addAcademic(){
+    if (this.academic.invalid){
+      return;
+    }
     this.apiservice.saveacademicDetails(this.academic.value,'/academic/').subscribe(res=>{
       console.log(res);
     })

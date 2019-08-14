@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RestApiService } from 'src/app/rest-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -16,11 +17,16 @@ export class ContactComponent implements OnInit {
     linkedLink: new FormControl('',Validators.required)
   });
 
-  constructor(private apiservice: RestApiService) { }
+  constructor(private apiservice: RestApiService,
+    private router: Router) { }
 
   contactAdd(){
+    if (this.studentContact.invalid){
+      return;
+    }
     this.apiservice.savecontactDetails(this.studentContact.value,'/contact/').subscribe(res=>{
       console.log(res);
+      this.router.navigate(['/academic'])
     })
     console.log(this.studentContact.value)
 

@@ -10,6 +10,9 @@
                 <mat-option value="option">Thapar University</mat-option>
                 <mat-option value="option">Other</mat-option>
             </mat-select>
+            <mat-error *ngIf="!academic.hasError('required')">
+                College Name is <strong>required</strong>
+            </mat-error>
         </mat-form-field><br>
 
         <mat-form-field>
@@ -20,15 +23,24 @@
                 <mat-option value="option">M.tech</mat-option>
                 <mat-option value="option">Other</mat-option>
             </mat-select>
+            <mat-error *ngIf="!academic.hasError('required')">
+                Degree is <strong>required</strong>
+            </mat-error>
         </mat-form-field><br>
 
         <mat-form-field>
             <input matInput placeholder="From Year" formControlName="yearFrom">
+            <mat-error *ngIf="!academic.hasError('required')">
+                Start Year is <strong>required</strong>
+            </mat-error>
         </mat-form-field>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <mat-form-field>
             <input matInput placeholder="To Year" formControlName="yearTo">
+            <mat-error *ngIf="!academic.hasError('required')">
+                End Year is <strong>required</strong>
+            </mat-error>
         </mat-form-field>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 

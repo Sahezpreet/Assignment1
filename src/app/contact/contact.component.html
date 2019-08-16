@@ -4,21 +4,33 @@
     <form [formGroup]="studentContact">
         <mat-form-field>
             <input matInput placeholder="EmailId" formControlName="emailId">
+            <mat-error *ngIf="!studentContact.hasError('required')">
+                Email Id is <strong>required</strong>
+            </mat-error>
         </mat-form-field>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <mat-form-field>
             <input matInput placeholder="Contact Number" formControlName="contactNumber">
+            <mat-error *ngIf="!studentContact.hasError('required')">
+                Contact Number is <strong>required</strong>
+            </mat-error>
         </mat-form-field>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <mat-form-field>
             <input matInput placeholder="Github Link" formControlName="githubLink">
+            <mat-error *ngIf="!studentContact.hasError('required')">
+                Github Link is <strong>required</strong>
+            </mat-error>
         </mat-form-field>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <mat-form-field>
             <input matInput placeholder="Linkedin Link" formControlName="linkedLink">
+            <mat-error *ngIf="!studentContact.hasError('required')">
+                Linkedin Link is <strong>required</strong>
+            </mat-error>
         </mat-form-field><br>
 
         <button mat-raised-button color="primary" (click)='contactAdd()'> Add </button>

@@ -2,44 +2,61 @@
     <h1 style="color: blue">Add Students</h1>
 
       <form [formGroup]="profileForm" novalidate>
-        <mat-form-field>
-          <input matInput placeholder="First Name" formControlName="firstName">
-          <!-- <mat-error *ngIf="lastname.touched && lastname.invalid">
-            <mat-error *ngIf="lastname.errors">Lastname is <strong>required</strong></mat-error>
-          </mat-error> -->
+        <mat-form-field class="col-md-4">
+          <input matInput placeholder="First Name" formControlName="firstName" required>
+          <mat-error *ngIf="!profileForm.hasError('required')">
+            Firstname is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
         <mat-form-field>
           <input matInput placeholder="Middle Name" formControlName="middleName" required>
+          <input matInput placeholder="First Name" formControlName="firstName" required>
+          <mat-error *ngIf="!profileForm.hasError('required')">
+            Middlename is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <mat-form-field>
-          <input matInput placeholder="Last Name" formControlName="lastName">
+          <input matInput placeholder="Last Name" formControlName="lastName" required>
+          <input matInput placeholder="First Name" formControlName="firstName" required>
+          <mat-error *ngIf="!profileForm.hasError('required')">
+            Lastname is <strong>required</strong>
+          </mat-error>
         </mat-form-field><br>
 
         <mat-form-field>
-            <input matInput placeholder="Location" formControlName="location">
+            <input matInput placeholder="Location" formControlName="location" required>
+            <mat-error *ngIf="!profileForm.hasError('required')">
+              Location is <strong>required</strong>
+            </mat-error>
         </mat-form-field>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dateOfBirth">
+            <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dateOfBirth" required>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="!profileForm.hasError('required')">
+              DOB is <strong>required</strong>
+            </mat-error>
         </mat-form-field>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
         <mat-form-field>
-            <mat-select placeholder="Gender" formControlName="gender">
+            <mat-select placeholder="Gender" formControlName="gender" required>
               <mat-option value="option">Male</mat-option>
               <mat-option value="option">Female</mat-option>
               <mat-option value="option">Others</mat-option>
             </mat-select>
+            <mat-error *ngIf="!profileForm.hasError('required')">
+              Gender is <strong>required</strong>
+            </mat-error>
         </mat-form-field><br>
 
-        <button mat-raised-button color="primary"  (click)='studentAdd()'> Submit </button> 
+        <button mat-raised-button color="primary" (click)='studentAdd()'> Submit </button> 
       </form>
 </div>
 <router-outlet></router-outlet>
